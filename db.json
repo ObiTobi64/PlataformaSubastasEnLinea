@@ -1,0 +1,28 @@
+{
+  "users": [
+    { "id": 1, "username": "admin1", "role": "admin" },
+    { "id": 2, "username": "user1", "role": "user" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Vintage Watch",
+      "description": "A classic timepiece",
+      "basePrice": 100,
+      "duration": 300,
+      "image": "https://via.placeholder.com/150",
+      "startTime": "2025-06-28T01:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Antique Vase",
+      "description": "A beautiful antique",
+      "basePrice": 200,
+      "duration": 600,
+      "image": "https://via.placeholder.com/150",
+      "startTime": "2025-06-29T01:00:00Z"
+    }
+  ],
+  "bids": [],
+  "messages": []
+}
