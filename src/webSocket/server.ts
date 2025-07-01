@@ -22,9 +22,17 @@ export interface IBid {
   timestamp?: string;
 }
 
+interface IChatMessage {
+  auctionId: string;
+  sender: string;
+  content: string;
+  timestamp: string;
+}
+
 const auctionBids: Record<string, IBid[]> = {};
 const currentHighestBids: Record<string, IBid> = {};
 const auctionWinners: Record<string, IBid> = {};
+const chatMessages: Record<string, IChatMessage[]> = {};
 
 const getAuctions = () => {
   try {
@@ -44,7 +52,6 @@ const getBidsByAuctionId = (auctionId: string): IBid[] => {
     const data = fs.readFileSync(dbPath, "utf-8");
     const db = JSON.parse(data);
     const allBids = db.bids || [];
-
     return allBids.filter(
       (bid: IBid) => bid.auctionId === auctionId.toString()
     );
@@ -258,6 +265,31 @@ io.on("connection", (socket) => {
       console.log(
         `PLACE_BID aceptada: $${bidData.amount} por usuario ${bidData.userId} en subasta ${bidData.auctionId}`
       );
+    }
+  );
+
+  // --- CHAT EN TIEMPO REAL POR SUBASTA ---
+  socket.on("JOIN_AUCTION_CHAT", (auctionId: string) => {
+    socket.join(`auction_chat_${auctionId}`);
+    socket.emit("CHAT_HISTORY", chatMessages[auctionId] || []);
+  });
+
+  socket.on(
+    "SEND_CHAT_MESSAGE",
+    (data: { auctionId: string; sender: string; content: string }) => {
+      if (!data.content.trim()) return;
+
+      const message: IChatMessage = {
+        auctionId: data.auctionId,
+        sender: data.sender,
+        content: data.content,
+        timestamp: new Date().toISOString(),
+      };
+
+      if (!chatMessages[data.auctionId]) chatMessages[data.auctionId] = [];
+      chatMessages[data.auctionId].push(message);
+
+      io.to(`auction_chat_${data.auctionId}`).emit("RECEIVE_CHAT_MESSAGE", message);
     }
   );
 

@@ -109,9 +109,9 @@
     },
     {
       "id": "c397",
-      "name": "team4",
-      "description": "aaaaaaaaa",
-      "basePrice": 123,
+      "name": "BookRed",
+      "description": "Libro rojo que contiene cuentos increibles",
+      "basePrice": 210,
       "startTime": "2025-06-30T18:08",
       "endTime": "2025-07-12T18:08"
     }
@@ -361,6 +361,41 @@
       "amount": 124,
       "userId": "1751347025744",
       "timestamp": "2025-07-01T05:25:18.871Z"
+    },
+    {
+      "id": "2612",
+      "auctionId": "c397",
+      "amount": 125,
+      "userId": "1",
+      "timestamp": "2025-07-01T05:42:54.540Z"
+    },
+    {
+      "id": "2180",
+      "auctionId": "c397",
+      "amount": 126,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:43:19.343Z"
+    },
+    {
+      "id": "ed89",
+      "auctionId": "6",
+      "amount": 350,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:44:48.335Z"
+    },
+    {
+      "id": "a855",
+      "auctionId": "6",
+      "amount": 330,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:57:49.292Z"
+    },
+    {
+      "id": "cbb4",
+      "auctionId": "6",
+      "amount": 440,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T06:06:49.939Z"
     }
   ]
 }
