@@ -6,7 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
   Toolbar,
-  Divider,
+  Divider, AppBar,  IconButton, Avatar, Box, Typography
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -35,6 +35,16 @@ const Sidebar = ({
     () => (
       <>
         <Toolbar />
+        <Box sx={{ display: "flex", alignItems: "center", gap: 3 ,ml: 7, mb: 2, mt: 4 }}>
+          <Typography variant="body1" color="black" sx={{ fontWeight: "bold" }}>
+            {user?.username}
+          </Typography>
+          <Avatar
+            src={user?.avatar}
+            sx={{ width: 52, height: 52 }}
+          >
+          </Avatar>
+        </Box>
         <Divider />
         <List>
           {menu.map((item) => (

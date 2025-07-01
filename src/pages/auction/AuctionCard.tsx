@@ -1,7 +1,9 @@
-import { Card, CardMedia, Typography, Box } from "@mui/material";
+import { Card, CardMedia, Typography, Box, IconButton } from "@mui/material";
+import GavelIcon from "@mui/icons-material/Gavel";
 import { useNavigate } from "react-router-dom";
 import type { ReactNode } from "react";
 import { Timer as BaseTimer } from "../../components/Timer";
+
 
 interface ImageProps {
   src: string;
@@ -18,6 +20,7 @@ interface TimerProps {
 interface AuctionCardProps {
   children: ReactNode;
   auctionId: string;
+  status: "ended" | "active";
 }
 
 export const AuctionCard = ({ children, auctionId }: AuctionCardProps) => {
@@ -49,8 +52,35 @@ export const AuctionCard = ({ children, auctionId }: AuctionCardProps) => {
 };
 
 const ImageContainer = ({ children }: { children: ReactNode }) => (
-  <Box sx={{ position: "relative" }}>{children}</Box>
+  <Box sx={{ position: "relative" }}>
+    {/* Íconos flotantes en la esquina superior izquierda */}
+    <Box
+      sx={{
+        position: "absolute",
+        top: 8,
+        left: 8,
+        display: "flex",
+        flexDirection: "column",
+        gap: 1,
+        zIndex: 2,
+      }}
+    >
+      <IconButton
+        size="small"
+        sx={{
+          backgroundColor: "#1976d2",
+          color: "white",
+          "&:hover": { backgroundColor: "#1565c0" },
+        }}
+      >
+        <GavelIcon fontSize="small" />
+      </IconButton>
+    </Box>
+
+    {children}
+  </Box>
 );
+
 
 const Image = ({ src, alt }: ImageProps) => {
   return <CardMedia component="img" height="350" image={src} alt={alt} />;

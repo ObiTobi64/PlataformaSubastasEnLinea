@@ -4,7 +4,6 @@ import {
   Typography,
   Card,
   CardContent,
-  Grid,
   Table,
   TableBody,
   TableCell,
@@ -24,7 +23,6 @@ import { useTranslation } from "react-i18next";
 import { useAuctionStore } from "../../store/useAuctionStore";
 import { useBidStore } from "../../store/useBidStore";
 import { useUserStore } from "../../store/useUserStore";
-import { auctionTypes } from "../../constants/auctionTypes";
 
 const TabPanel = ({
   children,
@@ -137,98 +135,103 @@ export const AuctionResults = () => {
 
   return (
     <Box p={3}>
-      <Typography
-        variant="h3"
-        textAlign="center"
-        gutterBottom
-        sx={{ fontWeight: "bold", color: "primary.main", mb: 4 }}
-      >
-        {t("results.title") || "Auction Results & Statistics"}
-      </Typography>
+      <link
+        rel="stylesheet"
+        href="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/css/main.d7f96858.css"
+      />
 
-      <Grid container spacing={3} sx={{ mb: 4 }}>
-        <Grid sx={{ xs: 12, sm: 6, md: 3 }}>
-          <Card elevation={2}>
-            <CardContent sx={{ textAlign: "center" }}>
-              <Avatar sx={{ mx: "auto", mb: 1, bgcolor: "primary.main" }}>
+      <div className="h-auto bg-gray-50 flex items-center fade-in ">
+        <section className="w-full bg-cover bg-center py-32 relative" style={{ backgroundImage: 'url(https://img.freepik.com/vector-premium/fondo-banner-diseno-portada-web-redes-sociales_906484-6.jpg)' }}>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="container mx-auto text-center text-white relative z-10">
+           <Typography
+              variant="h3"
+              textAlign="center"
+              gutterBottom
+              sx={{ fontWeight: "bold", color: "primary.main", m: 5 }}
+            >
+              {t("results.title") || "Auction Results & Statistics"}
+            </Typography>
+          </div>
+        </section>
+      </div>
+      
+
+      <div className="min-w-[375px] md:min-w-[700px] xl:min-w-[800px] mt-3  mb-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4">
+        <div className="relative flex flex-grow !flex-row flex-col items-center rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+          <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
+            <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
+              <span className="flex items-center text-brand-500 dark:text-white">
                 <Timeline />
-              </Avatar>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                {stats.totalAuctions}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {t("results.totalAuctions") || "Total Auctions"}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+              </span>
+            </div>
+          </div>
+          <div className="h-50 ml-4 flex w-auto flex-col justify-center">
+            <p className="font-dm text-sm font-medium text-gray-600">
+              {t("results.totalAuctions") || "Total Auctions"}
+            </p>
+            <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+              {stats.totalAuctions}
+            </h4>
+          </div>
+        </div>
 
-        <Grid sx={{ xs: 12, sm: 6, md: 3 }}>
-          <Card elevation={2}>
-            <CardContent sx={{ textAlign: "center" }}>
-              <Avatar sx={{ mx: "auto", mb: 1, bgcolor: "success.main" }}>
+        <div className="relative flex flex-grow !flex-row flex-col items-center rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+          <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
+            <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
+              <span className="flex items-center text-brand-500 dark:text-white">
                 <EmojiEvents />
-              </Avatar>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                {stats.completedAuctions}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {t("results.completedAuctions") || "Completed"}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+              </span>
+            </div>
+          </div>
+          <div className="h-50 ml-4 flex w-auto flex-col justify-center">
+            <p className="font-dm text-sm font-medium text-gray-600">
+              {t("results.completedAuctions") || "Completed"}
+            </p>
+            <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+              {stats.completedAuctions}
+            </h4>
+          </div>
+        </div>
 
-        <Grid sx={{ xs: 12, sm: 6, md: 3 }}>
-          <Card elevation={2}>
-            <CardContent sx={{ textAlign: "center" }}>
-              <Avatar sx={{ mx: "auto", mb: 1, bgcolor: "success.main" }}>
-                <EmojiEvents />
-              </Avatar>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                {stats.completedAuctions}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {t("results.completedAuctions") || "Completed"}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid sx={{ xs: 12, sm: 6, md: 3 }}>
-          <Card elevation={2}>
-            <CardContent sx={{ textAlign: "center" }}>
-              <Avatar sx={{ mx: "auto", mb: 1, bgcolor: "info.main" }}>
+        <div className="relative flex flex-grow !flex-row flex-col items-center rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+          <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
+            <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
+              <span className="flex items-center text-brand-500 dark:text-white">
                 <TrendingUp />
-              </Avatar>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                ${stats.totalRevenue.toLocaleString()}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {t("results.totalRevenue") || "Total Revenue"}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+              </span>
+            </div>
+          </div>
+          <div className="h-50 ml-4 flex w-auto flex-col justify-center">
+            <p className="font-dm text-sm font-medium text-gray-600">
+              {t("results.totalRevenue") || "Total Revenue"}
+            </p>
+            <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+              ${stats.totalRevenue.toLocaleString()}
+            </h4>
+          </div>
+        </div>
 
-        <Grid sx={{ xs: 12, sm: 6, md: 3 }}>
-          <Card elevation={2}>
-            <CardContent sx={{ textAlign: "center" }}>
-              <Avatar sx={{ mx: "auto", mb: 1, bgcolor: "warning.main" }}>
+        <div className="relative flex flex-grow !flex-row flex-col items-center rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+          <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
+            <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
+              <span className="flex items-center text-brand-500 dark:text-white">
                 <People />
-              </Avatar>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                {stats.totalParticipants}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {t("results.participants") || "Participants"}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
+              </span>
+            </div>
+          </div>
+          <div className="h-50 ml-4 flex w-auto flex-col justify-center">
+            <p className="font-dm text-sm font-medium text-gray-600">
+              {t("results.participants") || "Participants"}
+            </p>
+            <h4 className="text-xl font-bold text-navy-700 dark:text-white">
+              {stats.totalParticipants}
+            </h4>
+          </div>
+        </div>
+      </div>
 
-      {/* ✅ Tabs */}
+      {/* Tabs */}
       <Card elevation={2}>
         <Tabs value={tabValue} onChange={handleTabChange}>
           <Tab label={t("results.allAuctions") || "All Auctions"} />
@@ -237,7 +240,7 @@ export const AuctionResults = () => {
 
         <TabPanel value={tabValue} index={0}>
           <CardContent>
-            {/* ✅ Filter */}
+            {/* Filter */}
             <Box mb={3}>
               <TextField
                 select
@@ -257,7 +260,7 @@ export const AuctionResults = () => {
               </TextField>
             </Box>
 
-            {/* ✅ Auctions Table */}
+            {/* Auctions Table */}
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>

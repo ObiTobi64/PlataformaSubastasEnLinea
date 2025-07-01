@@ -25,14 +25,23 @@ function Home() {
 
   return (
     <Box p={3}>
-      <Typography
-        variant="h3"
-        textAlign="center"
-        gutterBottom
-        sx={{ fontWeight: "bold", color: "primary.main", mb: 4 }}
-      >
-        {t("home.title")}
-      </Typography>
+      
+      <div className="h-auto bg-gray-50 flex items-center fade-in ">
+        <section className="w-full bg-cover bg-center py-32 relative " style={{ backgroundImage: 'url(https://t3.ftcdn.net/jpg/02/09/56/68/360_F_209566861_wbhyfU0heSiEcTthT09a6fr6HXHBLRi7.jpg)' }}>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="container mx-auto text-center text-white relative z-10">
+           <Typography
+              variant="h3"
+              textAlign="center"
+              gutterBottom
+              sx={{ fontWeight: "bold", color: "primary.main", mb: 5 , p: 7 ,backgroundColor: "rgba(46, 90, 73, 0.03)", borderRadius: "8px" } }
+            >
+              {t("home.title")}
+            </Typography>
+          </div>
+        </section>
+      </div>
+    
 
       {auctions.length === 0 ? (
         <Box textAlign="center" py={4}>

@@ -21,7 +21,7 @@ export const BidForm = () => {
       </Typography>
 
       {currentBid && (
-        <Box mb={2} p={2} bgcolor="info.light" borderRadius={1}>
+        <Box mb={2} p={2} bgcolor="#B9D4AA" borderRadius={1}>
           <Typography variant="subtitle2">{t("bid.currentHighest")}</Typography>
           <Typography variant="h6" color="primary">
             ${currentBid.amount}
@@ -60,12 +60,6 @@ export const BidForm = () => {
           >
             {formik.isSubmitting ? t("bid.placing") : t("bid.placeBid")}
           </Button>
-
-          <Box textAlign="center">
-            <Typography variant="caption" color="text.secondary">
-              {t("bid.realTimeInfo")}
-            </Typography>
-          </Box>
         </Stack>
       </form>
     </Paper>

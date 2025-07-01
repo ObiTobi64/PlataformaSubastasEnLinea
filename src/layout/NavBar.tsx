@@ -27,18 +27,6 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
         
         <Box sx={{ flexGrow: 1 }} />
         
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <Typography variant="body1" color="inherit">
-            {user?.username}
-          </Typography>
-          <Avatar
-            src={user?.avatar}
-            // alt={user?.username}
-            sx={{ width: 32, height: 32 }}
-          >
-            {/* {user?.username?.[0]?.toUpperCase()} */}
-          </Avatar>
-        </Box>
       </Toolbar>
     </AppBar>
   );
