@@ -3,8 +3,9 @@ export const esJSON = {
     noSession: "No tienes una sesión activa",
   },
   error: {
-    generic: "Algo salió mal",
-    routes: "Error al cargar las rutas",
+    generic: "Ups algo salió mal",
+    routes: "Volver a la página de inicio",
+    backHome: "Volver a la página de inicio",
   },
   auth: {
     notFound: "Usuario no encontrado",

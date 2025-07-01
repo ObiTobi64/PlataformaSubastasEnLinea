@@ -24,7 +24,6 @@ function Login() {
     >
       <Paper elevation={3} sx={{ p: 4, maxWidth: 400, width: "100%" }}>
         <Box textAlign="center" mb={3}>
-          <Avatar sx={{ mx: "auto", mb: 2, bgcolor: "primary.main" }} />
           <Typography variant="h4" component="h1">
             {t("auth.loginTitle")}
           </Typography>

@@ -48,6 +48,7 @@ export const BidForm = () => {
             helperText={formik.touched.amount && formik.errors.amount}
             inputProps={{
               step: "0.01",
+              min: 0,
             }}
           />
 

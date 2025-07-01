@@ -37,14 +37,8 @@
       "avatar": "https://picsum.photos/200"
     },
     {
-      "id": "1751229747919",
-      "username": "ffff",
-      "role": "user",
-      "avatar": "https://picsum.photos/200/300"
-    },
-    {
       "id": "1751347025744",
-      "username": "ivan",
+      "username": "Navi",
       "role": "user",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPFT453vAvpQb0JdlmwmlvGeCLQYl2JHdzhe9tQFTvkhmnt1j0piKEGshlMnVZ_khcoRc&usqp=CAU"
     }
@@ -52,41 +46,31 @@
   "auctions": [
     {
       "id": "1",
-      "name": "Samsung Galaxy S24",
-      "basePrice": 800,
+      "name": "Iphone 16 Pro",
+      "basePrice": 1340,
       "description": "Latest ",
       "img": "https://picsum.photos/300/200?random=1",
-      "startTime": "2025-06-29T10:00:00Z",
-      "endTime": "2025-06-30T11:30:00Z"
+      "startTime": "2025-07-01T05:32",
+      "endTime": "2025-07-17T05:32"
     },
     {
       "id": "2",
-      "name": "Apple MacBook Pro",
-      "basePrice": 1200,
-      "description": "Powerful laptop with M2 chip, perfect for professionals",
+      "name": " MacBook",
+      "basePrice": 1600,
+      "description": "M2 chip",
       "img": "https://picsum.photos/300/200?random=2",
       "startTime": "2025-07-01T09:00:00Z",
       "endTime": "2025-07-02T15:45:00Z"
     },
     {
       "id": "3",
-      "name": "Sony WH-1000XM5",
-      "basePrice": 350,
+      "name": "Canon Camera f10",
+      "basePrice": 543,
       "auctionDuration": 1800,
-      "description": "Premium noise-canceling wireless headphones",
+      "description": "Quality camera",
       "img": "https://picsum.photos/300/200?random=3",
       "startTime": "2025-06-29T08:00:00Z",
       "endTime": "2025-06-30T20:20:00Z"
-    },
-    {
-      "id": "4",
-      "name": "LG OLED 55\" TV",
-      "basePrice": 900,
-      "auctionDuration": 5400,
-      "description": "Ultra HD 4K OLED television with smart features",
-      "img": "https://picsum.photos/300/200?random=4",
-      "startTime": "2025-06-27T10:00:00Z",
-      "endTime": "2025-06-28T20:00:00Z"
     },
     {
       "id": "5",
@@ -99,19 +83,19 @@
     },
     {
       "id": "6",
-      "name": "Nintendo Switch OLED",
-      "basePrice": 320,
+      "name": "PlayStation 5",
+      "basePrice": 1320,
       "auctionDuration": 2700,
-      "description": "Gaming console with vibrant OLED display",
+      "description": "Consola de videojuegos 2025",
       "img": "https://picsum.photos/300/200?random=6",
       "startTime": "2024-06-27T10:00:00Z",
       "endTime": "2026-07-01T16:30:00Z"
     },
     {
       "id": "c397",
-      "name": "team4",
-      "description": "aaaaaaaaa",
-      "basePrice": 123,
+      "name": "BookRed",
+      "description": "Libro rojo que contiene cuentos increibles",
+      "basePrice": 210,
       "startTime": "2025-06-30T18:08",
       "endTime": "2025-07-12T18:08"
     }
@@ -354,6 +338,104 @@
       "amount": 321,
       "userId": "2",
       "timestamp": "2025-07-01T04:29:52.698Z"
+    },
+    {
+      "id": "9cbf",
+      "auctionId": "c397",
+      "amount": 124,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:25:18.871Z"
+    },
+    {
+      "id": "2612",
+      "auctionId": "c397",
+      "amount": 125,
+      "userId": "1",
+      "timestamp": "2025-07-01T05:42:54.540Z"
+    },
+    {
+      "id": "2180",
+      "auctionId": "c397",
+      "amount": 126,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:43:19.343Z"
+    },
+    {
+      "id": "ed89",
+      "auctionId": "6",
+      "amount": 350,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:44:48.335Z"
+    },
+    {
+      "id": "a855",
+      "auctionId": "6",
+      "amount": 330,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T05:57:49.292Z"
+    },
+    {
+      "id": "cbb4",
+      "auctionId": "6",
+      "amount": 440,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T06:06:49.939Z"
+    },
+    {
+      "id": "023f",
+      "auctionId": "6",
+      "amount": 541,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T06:49:15.618Z"
+    },
+    {
+      "id": "18d1",
+      "auctionId": "6",
+      "amount": 542,
+      "userId": "2",
+      "timestamp": "2025-07-01T06:49:48.961Z"
+    },
+    {
+      "id": "7e16",
+      "auctionId": "6",
+      "amount": 543,
+      "userId": "2",
+      "timestamp": "2025-07-01T07:09:41.745Z"
+    },
+    {
+      "id": "87c4",
+      "auctionId": "6",
+      "amount": 544,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T08:26:18.088Z"
+    },
+    {
+      "id": "98aa",
+      "auctionId": "6",
+      "amount": 555,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T09:24:40.322Z"
+    },
+    {
+      "id": "1def",
+      "auctionId": "6",
+      "amount": 667,
+      "userId": "2",
+      "timestamp": "2025-07-01T09:24:46.680Z"
+    },
+    {
+      "id": "747b",
+      "auctionId": "6",
+      "amount": 777,
+      "userId": "1751347025744",
+      "timestamp": "2025-07-01T09:29:47.698Z"
+    },
+    {
+      "id": "1589",
+      "auctionId": "6",
+      "amount": 787,
+      "userId": "2",
+      "timestamp": "2025-07-01T09:29:54.814Z"
     }
   ]
 }

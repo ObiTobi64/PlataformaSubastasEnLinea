@@ -1,6 +1,9 @@
 import { useEffect } from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Chip } from "@mui/material";
 import { useAuctionStore } from "../store/useAuctionStore";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import GavelIcon from "@mui/icons-material/Gavel";
+import EventIcon from "@mui/icons-material/Event";
 import { useBidStore } from "../store/useBidStore"; // ✅ Importar BidStore
 import { useTranslation } from "react-i18next";
 import { AuctionCard } from "./auction/AuctionCard";
@@ -82,35 +85,40 @@ function Home() {
 
                     <AuctionCard.Footer>
                       {(() => {
-                        // ✅ Mejorar lógica con winner
                         if (!timer) return null;
+
+                        let label = "";
+                        let color: "default" | "primary" | "secondary" | "error" | "info" | "success" | "warning" = "default";
+                        let icon = null;
 
                         switch (timer.type) {
                           case auctionTypes.PRESENT:
-                            if (currentBid) {
-                              return `${t(
-                                "home.currentBid"
-                              )} $${currentBid.amount.toFixed(2)}`;
-                            }
-                            return `${t(
-                              "home.basePrice"
-                            )} $${auction.basePrice.toFixed(2)}`;
+                            icon = <GavelIcon />;
+                            color = "success";
+                            label = currentBid
+                              ? `${t("home.currentBid")} $${currentBid.amount.toFixed(2)}`
+                              : `${t("home.basePrice")} $${auction.basePrice.toFixed(2)}`;
+                            break;
 
                           case auctionTypes.PAST:
-                            // ✅ Para subastas pasadas, mostrar resultado
-                            if (latestBidder) {
-                              return `${t(
-                                "home.soldFor"
-                              )} $${currentBid!.amount.toFixed(2)}`;
-                            }
-                            return t("home.pastAuction");
+                            icon = <AccessTimeIcon />;
+                            color =  "error" ;
+                            label = latestBidder
+                              ? `${t("home.soldFor")} $${currentBid!.amount.toFixed(2)}`
+                              : t("home.pastAuction");
+                            break;
 
                           case auctionTypes.FUTURE:
-                            return t("home.futureAuction");
+                            icon = <EventIcon />;
+                            color = "info";
+                            label = t("home.futureAuction");
+                            break;
 
                           default:
                             return null;
                         }
+
+                        return <Chip icon={icon} label={label} color={color} />;
                       })()}
                     </AuctionCard.Footer>
                   </Box>

@@ -28,6 +28,7 @@ import { BidForm } from "../../components/BidForm";
 import { AuctionChat } from "../../components/AuctionChat";
 
 export const AuctionInfo = () => {
+  //throw new Error ('Ups algo salió mal');
   const { t } = useTranslation();
   const { user } = useAuth();
   const { auctionId } = useParams<{ auctionId: string }>();

@@ -3,8 +3,9 @@ export const enJSON = {
     noSession: "You are not logged in",
   },
   error: {
-    generic: "Something went wrong",
-    routes: "Error loading routes",
+    generic: "Sorry, we couldn't find the page you're looking for",
+    routes: "Back to homepage",
+    backHome: "Back to homepage",
   },
   auth: {
     notFound: "User not found",
