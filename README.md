@@ -368,5 +368,3 @@ npm run dev
 - GitHub: ObiTobi64
 - Email: obitotcp@gmail.com
 ---
-
-⭐ **¡Dale una estrella al proyecto porfaaaa!**
